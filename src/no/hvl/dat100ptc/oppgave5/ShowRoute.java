@@ -35,11 +35,13 @@ public class ShowRoute extends EasyGraphics {
 
 		makeWindow("Route", MAPXSIZE + 2 * MARGIN, MAPYSIZE + 2 * MARGIN);
 
+		showStatistics();
+		
 		showRouteMap(MARGIN + MAPYSIZE);
 
 		playRoute(MARGIN + MAPYSIZE);
+		 
 		
-		showStatistics();
 	}
 
 	// antall x-pixels per lengdegrad
@@ -70,7 +72,7 @@ public class ShowRoute extends EasyGraphics {
 		double ystep = ystep();
 		double xstep = xstep();
 		
-		int rad = 5;
+		int rad = 3;
 		
 		int xPos = 0;
 		int yPos = 0;
@@ -136,13 +138,13 @@ public class ShowRoute extends EasyGraphics {
 		double xstep = xstep();
 		double ystep = ystep();
 		
-		setSpeed(5);
+		setSpeed(2);
 		setColor(0,0,255);
 		
 		double minlat = GPSUtils.findMin(GPSUtils.getLatitudes(gpspoints));
 		double minlon = GPSUtils.findMin(GPSUtils.getLongitudes(gpspoints));
 		
-		int rad = 6;
+		int rad = 4;
 		int xPos = (int)(xstep * (gpspoints[0].getLongitude()-minlon) + 30);
 		int yPos = (int)(AREA-(ystep * (gpspoints[0].getLatitude()-minlat)));
 		
